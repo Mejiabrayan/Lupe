@@ -1,8 +1,8 @@
 'use client';
 import { CheckCircle } from 'lucide-react';
 import React, { useState } from 'react';
-import { Button } from '../ui/button';
-import { Switch } from '../ui/switch';
+import { Button } from '../../ui/button';
+import { Switch } from '../../ui/switch';
 
 const Price = () => {
   const [isBasic, setIsBasic] = React.useState<boolean>(false); // Set the default to Pro
@@ -37,14 +37,15 @@ const Price = () => {
   ];
 
   return (
-    <>
+    <section id='#subscription' className='flex items-center justify-center w-full py-20'>
+
       <div className='grid grid-cols-1 gap-6 place-content-center place-items-center'>
         {isBasic ? (
           <div className='border rounded-md p-5 bg-transparent shadow-md backdrop-blur-lg flex flex-col justify-between col-span-1'>
             <div className='space-y-3'>
               <h1 className='text-2xl font-bold'>{prices[1].title}</h1>
               <h2 className='text-2xl font-bold'>${prices[1].price}</h2>
-              <Switch checked={isBasic} onClick={() => setIsBasic(!isBasic)} />
+              <Switch   checked={isBasic} onClick={() => setIsBasic(!isBasic)} />
               <p className='text-sm text-gray-400'>{prices[1].description}</p>
             </div>
             <div className='space-y-3 mt-4'>
@@ -81,7 +82,7 @@ const Price = () => {
           </div>
         )}
       </div>
-    </>
+    </section>
   );
 };
 

@@ -20,7 +20,6 @@ export default function Navbar() {
   const router = useRouter();
   const pathname = usePathname();
   const navRef = useRef(null);
-  const { scrollY } = useScroll();
 
   if (isFetching) return <></>;
 
@@ -35,10 +34,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav
-      ref={navRef}
-      className='flex justify-between items-center bg-transparent text-black dark:text-white px-2 rounded-md h-20 mt-5'
-    >
+    <nav className='flex justify-between items-center bg-transparent text-black dark:text-white px-2 rounded-md h-20 mt-5'>
       <div className='flex items-center gap-2'>
         <Image
           src='/logo.png'
@@ -53,17 +49,13 @@ export default function Navbar() {
       <div className='hidden md:flex lg:flex'>
         <NavMenu />
       </div>
+
       <div className='hidden md:flex lg:flex items-center gap-2'>
         <ModeToggle />
-        {!data?.id ? (
-          <Link href='/auth'>
-            <GooeyButton />
-          </Link>
-        ) : (
-          <Button variant={'default'} onClick={handleSignout}>
-            Signout
-          </Button>
-        )}
+
+        <Link href='/auth'>
+          <GooeyButton />
+        </Link>
       </div>
       <Button className='md:hidden lg:hidden text-black'>Menu</Button>
     </nav>
