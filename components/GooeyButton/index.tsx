@@ -1,15 +1,13 @@
-import { MoveUpRight } from 'lucide-react';
-import { Button } from '../ui/button';
 import styles from './button.style.module.scss';
 import React from 'react';
 
 interface GooeyButtonProps {}
 
-
 const GooeyButton = () => {
   const [hover, setHover] = React.useState<boolean>(false);
+  
   return (
-    <div
+    <button
       className='group relative inline-flex items-center'
       x-data='{ hover: false }'
       onMouseEnter={() => setHover(true)}
@@ -19,7 +17,7 @@ const GooeyButton = () => {
         width='0'
         height='0'
         className='absolute hidden'
-        color-interpolation-filters='sRGB'
+        colorInterpolationFilters='sRGB'
       >
         <defs>
           <filter id='buttonFilter'>
@@ -79,7 +77,7 @@ const GooeyButton = () => {
           </div>
         </div>
       </div>
-    </div>
+    </button>
   );
 };
 

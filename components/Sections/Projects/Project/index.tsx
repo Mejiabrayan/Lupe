@@ -13,7 +13,7 @@ const Project = ({ index, title, setModal }: any) => {
       className={styles.project}
     >
         <h2>{title}</h2>
-        <p>Design & Development</p>
+        <p>Design, Development</p>
     </div>
   );
 };

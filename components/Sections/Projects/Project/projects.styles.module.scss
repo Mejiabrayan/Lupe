@@ -1,16 +1,18 @@
 .project{
     display: flex;
+    flex-direction: column;
     width: 100%;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 50px 100px 50px 100px;
+    padding: 20px;
     border-right: 1px solid rgb(201, 201, 201);
     cursor: pointer;
     transition: all 0.2s;
-    overflow: hidden;
+    gap: 2px;
+   
 }
 .project:last-of-type{
-    border-right: 1px solid rgb(201, 201, 201);
+    border-right: none;
 }
 
 .project:hover{
