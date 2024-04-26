@@ -34,7 +34,7 @@ export default function Navbar() {
   // // };
 
   return (
-    <nav className='flex sticky justify-between items-center bg-transparent text-black dark:text-white px-2 rounded-md h-20 mt-5'>
+    <nav className='z-10 flex sticky justify-between items-center bg-transparent text-black dark:text-white px-2 rounded-md h-20 mt-5'>
       <div className='flex items-center gap-2'>
         <Image
           src='/logo.png'

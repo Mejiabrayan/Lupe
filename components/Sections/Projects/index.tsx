@@ -26,6 +26,7 @@ const Index = () => {
 
   return (
     <main className="flex h-screen items-center justify-center">
+     
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
         {projects.map((project, index) => (
           <Project

@@ -5,7 +5,6 @@ interface GooeyButtonProps {}
 
 const GooeyButton = () => {
   const [hover, setHover] = React.useState<boolean>(false);
-  
   return (
     <button
       className='group relative inline-flex items-center'

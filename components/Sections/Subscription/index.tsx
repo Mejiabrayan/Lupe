@@ -3,6 +3,9 @@ import { CheckCircle } from 'lucide-react';
 import React, { useState } from 'react';
 import { Button } from '../../ui/button';
 import { Switch } from '../../ui/switch';
+import Image from 'next/image';
+import outline from '@/public/outlines 01.svg';
+import outlineTwo from '@/public/outlines 02.svg';
 
 const Price = () => {
   const [isBasic, setIsBasic] = React.useState<boolean>(false); // Set the default to Pro
@@ -37,7 +40,28 @@ const Price = () => {
   ];
 
   return (
-    <section id='#subscription' className='flex items-center justify-center w-full py-20'>
+    <section
+      id='#subscription'
+      className='relative flex flex-col items-center justify-center w-full py-20 gap-4 z-10'
+    >
+      <h1 className='text-4xl md:text-7xl tracking-tight font-bold text-center'>
+        Choose a plan
+      </h1>
+
+      <div className='absolute inset-0 bg-cover bg-center overflow-hidden rounded-xl -z-10 '>
+        <div className='absolute inset-0 bg-gradient-to-tr from-white via-transparent to-transparent rounded-xl dark:bg-gradient-to-tr dark:from-primary-subtleDark dark:via-transparent dark:to-transparent' />
+        <Image
+          src={outlineTwo}
+          quality={100}
+          priority
+          width={1920}
+          height={1080}
+          alt='price page'
+          className='dark:grayscale dark:brightness-[0.5] dark:mix-blend-darken'
+        />
+      </div>
+
+      {/* content */}
 
       <div className='grid grid-cols-1 gap-6 place-content-center place-items-center'>
         {isBasic ? (
@@ -45,7 +69,7 @@ const Price = () => {
             <div className='space-y-3'>
               <h1 className='text-2xl font-bold'>{prices[1].title}</h1>
               <h2 className='text-2xl font-bold'>${prices[1].price}</h2>
-              <Switch   checked={isBasic} onClick={() => setIsBasic(!isBasic)} />
+              <Switch checked={isBasic} onClick={() => setIsBasic(!isBasic)} />
               <p className='text-sm text-gray-400'>{prices[1].description}</p>
             </div>
             <div className='space-y-3 mt-4'>
