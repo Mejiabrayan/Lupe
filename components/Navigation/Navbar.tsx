@@ -1,3 +1,4 @@
+
 'use client';
 import Link from 'next/link';
 import React, { useRef } from 'react';
@@ -10,7 +11,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import { Button } from '../ui/button';
 import { protectedPaths } from '@/lib/constant';
 import { ModeToggle } from './ModeToggle';
-import GooeyButton from '../GooeyButton';
+import GooeyButton from '../ui/GooeyButton';
 
 import { NavMenu } from './NavMenu';
 

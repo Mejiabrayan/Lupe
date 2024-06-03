@@ -2,7 +2,7 @@ export const staggerChildren = {
     animate: {
       transition: {
         delayChildren: 0.4,
-        staggerChildren: 0.1,
+        staggerChildren: 0.1 ,
       },
     },
   };

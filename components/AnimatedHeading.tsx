@@ -18,7 +18,7 @@ const AnimatedTextWrapper: React.FC<AnimatedTextWrapperProps> = ({ title }) => {
       {title.split(' ').map((word, idx) => (
         <motion.div
           key={idx}
-          className='inline-block overflow-auto'
+          className='inline-flex overflow-auto leading-tight'
           variants={opacityAnimation}
         >
           <motion.h1 variants={wordAnimation}>{word + '\u00A0'}</motion.h1>

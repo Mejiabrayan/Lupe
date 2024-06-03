@@ -2,12 +2,8 @@ import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import stockPhoto from '../../../public/stock.jpg';
-import outline from '../../../public/outlines 01.svg';
-import outlineTwo from '../../../public/outlines 02.svg';
-import v0 from '../../../public/v0.svg';
 import lupeSolid from '@/public/lupe solid.svg';
-import lupeDash from '@/public/lupe dashed.svg';
+
 import AnimatedHeading from '@/components/AnimatedHeading';
 
 const LandingPage = () => {
@@ -15,10 +11,10 @@ const LandingPage = () => {
     <section className='relative w-full h-[600px] overflow-hidden rounded-xl'>
       <div className='relative z-20 flex items-center justify-center w-full h-full'>
         <div className='flex flex-col items-start w-full max-w-3xl p-8 bg-transparent text-center lg:text-left'>
-          <h1 className='mb-4 text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[#010202] dark:text-white lg:leading-tight text-balance mt-12'>
+          <h1 className='mb-4 text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[#010202] dark:text-white lg:leading-tight text-pretty mt-12'>
             <AnimatedHeading title='Web Development & Design Agency Based in San Francisco.' />
           </h1>
-          <p className='mb-8 text-base text-pretty font-medium tracking-tight leading-tight md:text-xl lg:text-2xl text-black dark:text-white'>
+          <p className='mb-8 text-base text-balance font-medium tracking-tight leading-tight md:text-xl lg:text-2xl text-black dark:text-white'>
             We are a leading web development and design agency that crafts
             innovative solutions to help your business thrive.
           </p>

@@ -1,10 +1,9 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import { ThemeProvider } from '@/components/providers/ThemeProvider';
 import QueryProvider from '@/components/providers/QueryProvider';
 import Navbar from '@/components/Navigation/Navbar';
-import { GeistSans } from 'geist/font/sans';
-import { GeistMono } from 'geist/font/mono';
+import { Analytics } from '@vercel/analytics/react';
 import { Montserrat, Space_Grotesk } from 'next/font/google';
 
 const monsterrat = Montserrat({
@@ -40,13 +39,19 @@ export const metadata: Metadata = {
     ],
   },
 };
+export const viewport: Viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: 'white' },
+    { media: '(prefers-color-scheme: dark)', color: 'black' },
+  ],
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <>
-      <html lang='en' suppressHydrationWarning>
+      <html lang='en' suppressHydrationWarning className='dark'>
         <head />
         <body className={`${monsterrat.className}`}>
           <QueryProvider>
@@ -56,10 +61,14 @@ export default function RootLayout({
               enableSystem
               disableTransitionOnChange
             >
-              <div className='mx-auto px-5 selection:text-primary-accent'>
+              <div
+                className='mx-auto px-5 w-full max-w-7xl
+              '
+              >
                 <Navbar />
-                <main className=' isolate flex flex-col min-h-screen justify-center items-center space-y-12 md:py-8'>
+                <main className='isolate flex flex-col min-h-screen justify-center items-center space-y-12 md:py-8'>
                   {children}
+                  <Analytics />
                 </main>
               </div>
             </ThemeProvider>
