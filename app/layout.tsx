@@ -5,6 +5,7 @@ import QueryProvider from '@/components/providers/QueryProvider';
 import Navbar from '@/components/Navigation/Navbar';
 import { Analytics } from '@vercel/analytics/react';
 import { Montserrat, Space_Grotesk } from 'next/font/google';
+import { Header } from '@/components/Navigation/Header';
 
 const monsterrat = Montserrat({
   subsets: ['latin'],
@@ -53,7 +54,9 @@ export default function RootLayout({
     <>
       <html lang='en' suppressHydrationWarning className='dark'>
         <head />
-        <body className={`${monsterrat.className}`}>
+        <body
+          className={`${monsterrat.className}   "overflow-x-hidden dark antialiased"`}
+        >
           <QueryProvider>
             <ThemeProvider
               attribute='class'
@@ -61,16 +64,11 @@ export default function RootLayout({
               enableSystem
               disableTransitionOnChange
             >
-              <div
-                className='mx-auto px-5 w-full max-w-7xl
-              '
-              >
-                <Navbar />
-                <main className='isolate flex flex-col min-h-screen justify-center items-center space-y-12 md:py-8'>
-                  {children}
-                  <Analytics />
-                </main>
-              </div>
+              <Header />
+              <main className='container mx-auto px-4 overflow-hidden md:overflow-visible'>
+                {children}
+                <Analytics />
+              </main>
             </ThemeProvider>
           </QueryProvider>
         </body>

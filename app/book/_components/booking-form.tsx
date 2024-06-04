@@ -6,6 +6,7 @@ import { useFormStatus } from 'react-dom';
 import { BookingActions } from '@/app/book/actions';
 import { useRef } from 'react';
 import { Button } from '@/components/ui/button';
+import { useOptimistic } from 'react';
 
 export default function BookingFormContent() {
   const formRef = useRef<HTMLFormElement>(null);
